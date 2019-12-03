@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-// import ToDoList from './components/TodoComponents/TodoList'
-// import TodoForm from './components/TodoComponents/TodoForm'
+import ReactDOM from 'react-dom';
+import ToDoList from './components/TodoComponents/TodoList'
+import TodoForm from './components/TodoComponents/TodoForm'
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -24,19 +24,23 @@ class App extends React.Component {
     completed: false
   }
 ],
-// inputTask: '',
-// newTask: ''
-// };
+inputTask: '',
+newTask: ''
+};
 }
-}
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <ToDoList taskData={this.state.taskData}/>
+        <TodoForm/>
       </div>
     );
   }
 }
 
+const rootElement = document.getElementById('root');
+ReactDOM.render(<App />, rootElement);
 
 export default App;
