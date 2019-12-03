@@ -1,9 +1,12 @@
 import React from "react";
 
-const ToDoItem = props => {
-  return (
-    <h1>{props.task}</h1>
-  )
-};
 
-export default ToDoItem;
+const Todo = props => {
+    return (
+    <p id={props.id} 
+    onClick={props.toggleComplete}>
+    {props.task}
+  </p>
+);
+}
+export default Todo;;

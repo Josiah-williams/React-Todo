@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ToDoList from './components/TodoComponents/TodoList'
+import TodoList from './components/TodoComponents/TodoList'
 import TodoForm from './components/TodoComponents/TodoForm'
 
 class App extends React.Component {
@@ -24,17 +24,42 @@ class App extends React.Component {
     completed: false
   }
 ],
-inputTask: '',
-newTask: ''
+newTodo: ''
 };
 }
+
+AddTodoHandler = event => {
+  console.log(event.target.name);
+  console.log('hello');
+};
+
+addNewTodo = event => {
+  event.preventDefault();
+  console.log(event.target.name);
+  console.log('hello');
+};
+
+toggleComplete = event => {
+event.preventDefault();
+console.log(event.target.name);
+console.log('hello');
+};
+
 
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <ToDoList taskData={this.state.taskData}/>
-        <TodoForm/>
+        <TodoList taskData={this.state.taskData}/>
+        <TodoForm
+          // input field
+          inputTodo={this.state.newTodo}
+          changeInput={this.changeHandler}
+          newTodo={this.state.newTodo}
+
+          // Add Todo button
+          addNewTodo={this.addNewTodo}
+        />
       </div>
     );
   }
