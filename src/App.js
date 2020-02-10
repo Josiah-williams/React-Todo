@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+// import  './components/TodoComponents/Todo.css'
 
 
 class App extends React.Component {
@@ -65,6 +65,9 @@ let todos = this.state.todos.slice();
 render() {
     return (
       <div>
+      <h1>Todo List: Mvp</h1>
+      
+     
         <TodoList
           handleToggleComplete={this.toggleTodoComplete}
           todos={this.state.todos}
@@ -77,12 +80,9 @@ render() {
         />
       </div>
     );
-  }
-
-
-
 }
-
+}
+    
 
 
 
